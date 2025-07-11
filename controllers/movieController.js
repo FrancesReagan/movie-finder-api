@@ -29,3 +29,28 @@ const searchMovies = async (req, res) => {
     res.status(500).json({ error: "Something went wrong"});
   }
   };
+
+  // function to get movie dtails by ID//
+  const getMovieDetails = async (req, res) => {
+    try {
+      // get movie ID form URL parameter//
+      const id = req.query.id;
+
+      // make request to OMDb API//
+      const response = await axios.get("http://www.omdbapi.com/",{
+        params: {
+          id: id,
+          apikey: process.env.OMDB_API_KEY
+        }
+      });
+
+      // send back the movie details//
+      res.json(response.data);
+    } catch (error) {
+  //  handle any errors//
+     res.status(500).json({ error: "Something went wrong" });
+    }
+    };
+  
+    // export both functions to routes//
+    module.exports = { searchMovies, getMovieDetails };
