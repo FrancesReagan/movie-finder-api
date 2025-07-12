@@ -2,7 +2,7 @@
 // import express framework//
 import express from "express";
 // import our movie routes//
-import movieRoutes from "./routes/movieRoutes";
+import movieRoutes from "./routes/movieRoutes.js";
 // load environment variables from .env file//
 import dotenv from "dotenv";
 

@@ -19,6 +19,8 @@ const moviesClient = axios.create({
   }
 })
 
+// interceptors is like a spy for debugging---it watches every request made and before each request is sent --it will print the details to the console for
+// debugging---if there is an error--it will pass the error along//
 moviesClient.interceptors.request.use(config => {
   console.log(config);
   return config
@@ -26,4 +28,5 @@ moviesClient.interceptors.request.use(config => {
   return Promise.reject(error);
 })
 
+// export my custom HTTP client so other files can use it--
 export default moviesClient;
