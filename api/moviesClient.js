@@ -3,7 +3,9 @@
 // import from axios library --this is a toool that helps me make HTTP requests (asking another server for data)//
 // axios is like a messenger that carries requests to other websites//
 import axios from "axios";
+// import dotenv --as it helps to read the secret information that is in my .env file---thereby--keeping my API keys safe/hidden form public eyes//
 import dotenv from "dotenv";
+// this line below tells dotenv to start working and read my .env file//
 dotenv.config();
 
 const moviesClient = axios.create({
