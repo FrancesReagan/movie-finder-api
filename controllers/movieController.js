@@ -1,6 +1,6 @@
 // controllers/moviecontroller//
 
-import { moviesClient } from "../api/moviesClient.js";
+import  moviesClient  from "../api/moviesClient.js";
 
 // search for movie 
 // @param {*} req
