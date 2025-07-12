@@ -15,7 +15,7 @@ const searchMovies = async (req, res) => {
     const title = req.query.title;
     console.log("Query: ", title);
 
-    // check if title was provided---below says---if title is not provided, return or  response status 400 error"
+    // validation check---check if title was provided---below says---if title is not provided, return or  response status 400 error"
     if (!title) {
       return res.status(400)
       .json({ error: "Title query parameter is required" });
@@ -41,14 +41,14 @@ const searchMovies = async (req, res) => {
       // get movie ID form URL parameter//
       const id = req.query.id;
 
-      // make request to OMDb API//
-      const response = await axios.get("http://www.omdbapi.com/",{
-        params: {
-          i: id,
-          apikey: process.env.OMDB_API_KEY
-        }
-      });
+      // validation check----check if id was provided//
+      if(!id) {
+        return res.status(400).json({ error: "ID query parameter is required" });
+      }
 
+      // make request to OMDb API using moviesClient//
+      const response = await moviesClient.get(`/?i=${id}`);
+      
       // send back the movie details//
       res.json(response.data);
     } catch (error) {
@@ -58,4 +58,4 @@ const searchMovies = async (req, res) => {
     };
   
     // export both functions to routes//
-    exports = { searchMovies, getMovieDetails };
+    export { searchMovies, getMovieDetails };
