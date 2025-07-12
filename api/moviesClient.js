@@ -8,8 +8,12 @@ import dotenv from "dotenv";
 // this line below tells dotenv to start working and read my .env file//
 dotenv.config();
 
+// after that--I can now access my secret API key using process.env.OMBD_API_KEY//
+// here making a special version of axios called moviesClient//
 const moviesClient = axios.create({
+  // every request will start with this base url//
   baseURL: "http://www.omdbapi.com",
+  // every request will include automatically my API key---this saves  me time ---so I don't have to keep typing the same URL and API key over and over again//
   params: {
     apikey: process.env.OMDB_API_KEY
   }
