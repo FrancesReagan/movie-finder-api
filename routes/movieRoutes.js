@@ -1,17 +1,22 @@
 // routes/movieRoutes//
 // import express//
-const express = require("express");
+import express from "express";
+
 
 // import controller functions//
-const { searchMovies, getMoviesDetails } = require("../controllers/movieControllers");
+import { searchMovies, getMoviesDetails } from "../controllers/movieController.js";
 
-// create router//
-const router = express.Router();
+// middleware if needed//
+router.use(express.json());
+
+// // create router//
+// const router = express.Router();
 
 // route for searching movies//
+// /api/movies/search
 router.get("/search", searchMovies);
 // route for getting movie details by ID//
+// /api/movies/:id
 router.get("/movies/:id", getMoviesDetails);
 
-// export router//
-module.exports = router;
+export default router;

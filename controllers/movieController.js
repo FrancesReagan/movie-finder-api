@@ -1,36 +1,43 @@
 // controllers/moviecontroller//
+
+import { moviesClient } from "../api/moviesClient.js";
+
+// search for movie 
+// @param {*} req
+// @param {*} res
+// @returns //
+
 // import axios from making HTTP requests//
-const axios = require("axios");
+import axios from "axios";
 
 // function to search for movies//
 const searchMovies = async (req, res) => {
   try {
     // get title from query parameter//
     const title = req.query.title;
+    console.log("Query: ", title);
 
-    // check if title was provided//
+    // check if title was provided---below says---if title is not provided, return or  response status 400 error"
     if (!title) {
-      return res.status(400).json({ error: "Title query parameter is required" });
+      return res.status(400)
+      .json({ error: "Title query parameter is required" });
     }
-    // make request to OMDb API//
-    const response = await axios.get("http://www.omdbapi.com/", {
-      params: {
-        search: title,
-        // API key from .env file//
-        apikey: process.env.OMDB_API_KEY 
-      }
-    });
 
+    // make request to OMDB: http://www.omdbapi.com/?s=batman&apiKey=//
+    // ? = query , s = search//
+    const moviesResult = await moviesClient.get(`/?s=${title}`);
+    // ungray out or uncomment this below when ready to use real api key//
+    // const moviesResult = await moviesClient.get(`/?s=${title}&apiKey=${process.env.OMDB_API_KEY`);
     // send back the results//
-    res.json(response.data);
+    res.json(moviesResult.data);
 
   } catch (error) {
     // handle any errors//
-    res.status(500).json({ error: "Something went wrong"});
+    res.status(500).json({ error: "Internal server error--could not get movie by title"});
   }
   };
 
-  // function to get movie dtails by ID//
+  // may remove this function to get movie dtails by ID---as this is kind of redundant as done somewhat similar  in moviesClient//
   const getMovieDetails = async (req, res) => {
     try {
       // get movie ID form URL parameter//
@@ -39,7 +46,7 @@ const searchMovies = async (req, res) => {
       // make request to OMDb API//
       const response = await axios.get("http://www.omdbapi.com/",{
         params: {
-          id: id,
+          i: id,
           apikey: process.env.OMDB_API_KEY
         }
       });
@@ -48,9 +55,9 @@ const searchMovies = async (req, res) => {
       res.json(response.data);
     } catch (error) {
   //  handle any errors//
-     res.status(500).json({ error: "Something went wrong" });
+     res.status(500).json({ error: "Internal server error --movie details failed to return" });
     }
     };
   
     // export both functions to routes//
-    module.exports = { searchMovies, getMovieDetails };
+    exports = { searchMovies, getMovieDetails };
