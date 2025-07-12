@@ -4,7 +4,7 @@ import express from "express";
 
 
 // import controller functions//
-import { searchMovies, getMoviesDetails } from "../controllers/movieController.js";
+import { searchMovies, getMovieDetails } from "../controllers/movieController.js";
 
 // middleware if needed//
 router.use(express.json());
@@ -17,6 +17,6 @@ router.use(express.json());
 router.get("/search", searchMovies);
 // route for getting movie details by ID//
 // /api/movies/:id
-router.get("/movies/:id", getMoviesDetails);
+router.get("/movies/:id", getMovieDetails);
 
 export default router;
