@@ -7,8 +7,6 @@ import { moviesClient } from "../api/moviesClient.js";
 // @param {*} res
 // @returns //
 
-// import axios from making HTTP requests//
-import axios from "axios";
 
 // function to search for movies//
 const searchMovies = async (req, res) => {
