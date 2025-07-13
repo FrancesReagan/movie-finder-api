@@ -36,7 +36,8 @@ export default moviesClient;
 // const moviesClient = axios.create({
 //   baseURL: "http://www.omdbapi.com",
 //   params: {
-//     apikey: "c3dd80ff"  // Hardcoded for testing
+// Hardcoded for testing//
+//     apikey: "c3dd80ff"  
 //   }
 // });
 
