@@ -14,6 +14,7 @@ const searchMovies = async (req, res) => {
     // get title from query parameter//
     const title = req.query.title;
     console.log("Query: ", title);
+    console.log("API Key fro .env:", process.env.OMDB_API_KEY);
 
     // validation check---check if title was provided---below says---if title is not provided, return or  response status 400 error"
     if (!title) {

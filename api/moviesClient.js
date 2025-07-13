@@ -30,3 +30,21 @@ moviesClient.interceptors.request.use(config => {
 
 // export my custom HTTP client so other files can use it--
 export default moviesClient;
+
+// import axios from "axios";
+
+// const moviesClient = axios.create({
+//   baseURL: "http://www.omdbapi.com",
+//   params: {
+//     apikey: "c3dd80ff"  // Hardcoded for testing
+//   }
+// });
+
+// moviesClient.interceptors.request.use(config => {
+//   console.log("Request config:", config);
+//   return config;
+// }, error => {
+//   return Promise.reject(error);
+// });
+
+// export default moviesClient;
