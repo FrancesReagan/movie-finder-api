@@ -11,7 +11,7 @@ _End point 2_http://localhost:4000/api/movies/details?id=tt0372784
 
 
 
-_Required Dependencies_
+__Required Dependencies__
 
 -`npm install express axios dotenv`
 
@@ -23,7 +23,7 @@ _Required Dependencies_
 
 
 
-_Development Dependencies_
+__Development Dependencies__
 
 -`npm install --save-dev nodemon`
 
@@ -43,7 +43,7 @@ This API acts as a middleman between users and the OMDb API.
 
 
 
-_Technologies Used_
+__Technologies Used__
 
 -Node.js: JavaScript runtime.
 
@@ -93,7 +93,7 @@ __Setup Instructions__
 
 
 
- _External APIs Used_
+ _External APIs Used__
  
  OMDb API (open movie database)
  
@@ -118,7 +118,7 @@ __Setup Instructions__
    -get API key via email they send
 
 
-_Create an .env file (environment file):
+_Create an .env file (environment file):__
 
  -create a `.env` file in the root directory (in same folder as server.js)
  
@@ -128,7 +128,7 @@ _Create an .env file (environment file):
 
 
 
-  _Important:_
+  _Important:__
   -Replace `your_api_key_here` with your actual API key from OMDb
   
   -No spaces around the =sign
@@ -139,7 +139,7 @@ _Create an .env file (environment file):
 
 
 
-_Create a `.gitignore` file in the root directory to keep sensitive information safe. 
+_Create a `.gitignore` file in the root directory to keep sensitive information safe.__ 
 
 -Inside the `.gitignore` file put `node_modules` and `.env`
 
@@ -147,7 +147,7 @@ This prevents your API key and tjhe large node_modules folder from being uploade
 
 
 
-_Run the Server_
+__Run the Server_
 
 -For development (auto-restart on changes)
 
@@ -156,6 +156,7 @@ _Run the Server_
 -For a normal start: `npm start`
 
 The server will run on `http://localhost:4000`
+
 
 
 
@@ -235,7 +236,7 @@ Get Movie Details:
 
 
 
-_Testing the API_
+__Testing the API__
 
 -using Postman: select extensions in Visual Studio code and search for `Postman` and select and install
 
