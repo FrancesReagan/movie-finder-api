@@ -49,5 +49,23 @@ __Setup Instructions__
     (note: the "type": "module" is crucial--as it allows you to use modern import/export syntax instead of older `require()` syntax.
     Package.json should look like this (albeit--don't need morgan for this project):
     <img width="379" height="377" alt="image" src="https://github.com/user-attachments/assets/016c5267-9531-4254-9d4c-9362131ee63a" />
+    -`touch server.js` --creates your empty server.js file
+
+
+ _External APIs Used_
+ OMDb API (open movie database)
+   -website: http://www.omdbapi.com/
+   -API Key registration: http://www.omdbapi.com/apikey.apx
+   -documentation: http://omdbapi.com/  
+   -What it provides: movie data including titles, plots, ratings, and cast.
+   -Free 1,000 daily requests alloted.
+
+  Get an API key:
+   -get to OMDb API site
+   -sign up for a free account
+   -get API key via email they send
+
+_Create an .env file (environment file):
+ -create a `.env` file in the root directory (in same folder as server.js)
 
 
