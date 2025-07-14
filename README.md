@@ -1,5 +1,5 @@
-___Movie Finder API__
-A RESTfyk API that allows users to search for movies and get detailed movie information using the OMDb(open movie database) API.
+__Movie Finder API__
+A RESTful API that allows users to search for movies and get detailed movie information using the OMDb(open movie database) API.
 
 _End point 1_ http://localhost:4000/api/movies/search?title=batman
 <img width="1261" height="734" alt="Movie-finder-api endpoint1" src="https://github.com/user-attachments/assets/a0cf45f7-acb6-471b-b2c9-371384ffe3f7" />
