@@ -145,7 +145,7 @@ _Create an .env file (environment file):__
 
 _Create a `.gitignore` file in the root directory to keep sensitive information safe.__ 
 
--Inside the `.gitignore` file put `node_modules` and `.env`
+-Inside the `.gitignore` file put `node_modules` and `.env` (for some reason my .env was stil pushed --- must have been the code I have now deleted that auto added the key--)
 
 This prevents your API key and tjhe large node_modules folder from being uploaded to GitHub.
 
@@ -261,8 +261,7 @@ The API included proper error handling: -`400 Bad Request`: when required parame
 
 __What this project taught me__
 
--how to build a RESTful API with Express.js, -how to make HTTP requests to external APIs, -how to organize code into separate files (routes, controllers, client(s)), how to handle errors, how to keep API keys secure
- using enviornment variables (.env), -how to validate user input before processing
+-how to build a RESTful API with Express.js, -how to make HTTP requests to external APIs, -how to organize code into separate files (routes, controllers, client(s)), how to handle errors, that I am still learning how to keep API keys secure using enviornment variables (.env)--and the issues that this can have--; -how to validate user input before processing
 
 __Future Improvements__
 -Add Morgan middleware for better request logging, add more endpoints (genres, popular movies, and so forth), add caching to reduce API calls, add a front-end interface for users, user authentication
@@ -282,11 +281,9 @@ _What went well_: Setup and installing Dependencies: I learned how to properly i
  Debugging: I learned the importance of systematic debugging when I ran into issues (especially with the environment variables  not loading). I added console.log statements and trying to remember
             to test one piece at a time---is the best practice to figure out early what is going on if there is an issue. I did not do this consistently--but I will in the future.
 
-  External API integration: I learned how to work with external APIs. I set up the movieClient with axios to automatically include the API key --that is a cool thing:).
-
   _Challenges faced:_
   Environment variables: this was my biggest challenge. My `.env` file was not being read properly---the API key was coming through as undefined. The issue--formatting and placement in the `.env` file
-  are crucial.  I deleted the .env file as even though it was in my .gitignore file it was still pushed to git hub--so I deleted it from this project.
+  are crucial.  I made sure this solution worked--then as a security measuer I deleted the .env file as even though it was in my .gitignore file it was still pushed to git hub--so I deleted it from this project.
 
 _Learning moments_: understanding modularity and how awesome it is---the why the movieClient functionality was separated form the controllers---as having one place to configure how I talk to the 
  OMDb API means that if I need to change something (like the API key or add logging) -- I only have to change it in one place.
@@ -304,6 +301,7 @@ _Learning moments_: understanding modularity and how awesome it is---the why the
   -learn about user authentication and authorization.
   -learn how to build front-end apps that consume APIs.
   -how to deploy APIs to the cloud.
+  -figure out why my .env file was pushed to github even though I had it in my .gitignore file--solutionn temporary--deleted file
 
 _Resources and References_:
 [Express.js](https://expressjs.com/)
