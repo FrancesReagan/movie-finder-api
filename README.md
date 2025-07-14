@@ -36,3 +36,18 @@ _Technologies Used_
 __Project Structure__
 <img width="158" height="216" alt="image" src="https://github.com/user-attachments/assets/2a4e1891-cf20-4467-933c-b90974cde381" />
 
+__Setup Instructions__
+  -`mkdir movie-finder-api`
+  -`cd movie-finder-api`
+  -Initialize project: `npm init -y`
+  -Install required dependencies: `npm install express axios dotenv`
+  -Update package.json: add these lines to package.json
+    -"type": "module",
+    -"scripts":{
+       "start": "node server.js",
+       "dev": "nodemon server.js
+    (note: the "type": "module" is crucial--as it allows you to use modern import/export syntax instead of older `require()` syntax.
+    Package.json should look like this (albeit--don't need morgan for this project):
+    <img width="379" height="377" alt="image" src="https://github.com/user-attachments/assets/016c5267-9531-4254-9d4c-9362131ee63a" />
+
+
