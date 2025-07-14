@@ -67,5 +67,75 @@ __Setup Instructions__
 
 _Create an .env file (environment file):
  -create a `.env` file in the root directory (in same folder as server.js)
+ -`PORT=4000`
+  `OMDB_API_KEY=your_api_key_here`
+
+  _Important:_
+  -Replace `your_api_key_here` with your actual API key from OMDb
+  -No spaces around the =sign
+  -No quotes around the values
+  -save as .env
+
+_Create a `.gitignore` file in the root directory to keep sensitive information safe. 
+-Inside the `.gitignore` file put `node_modules` and `.env`
+This prevents your API key and tjhe large node_modules folder from being uploaded to GitHub.
+
+_Run the Server_
+-For development (auto-restart on changes)
+`npm run dev`
+
+-For a normal start: `npm start`
+
+The server will run on `http://localhost:4000`
+
+To use Query Parameters or to use Route parameters----I chose to use query parameters over route parameters.
+ -What was used in this project -- query parameters--:
+  - `Get /api/movies/search?title=batman`
+  - `Get /api/movies/details?id=tt037284
+  - query parameters were used instead of route parameters as it was requested by our instructor to do so to practice working with
+    req.query.
+
+ _Learning purpose:this approach helped me understand: how to extract data from `req.query.title` and `req.query.id`, input validation with query paramenters, 
+ and URL structure with query strings.
+
+ _When to use each approach:_ 
+  -Query parameters (what was used in this project): better for optional filters: `/api/movies?genre=action&year=2020`
+  -Search functionality with multiple optional criteria.
+  -When you need to pass multiple parameters easily
+
+  _Route Parameters (more RESTful): 
+   -standard REST convention.
+   -better for resource identification: /api/movies/tt037283 
+   -cleaner URLs that are easy to read.
+
+  _*usually route parameters for this project would have a typical REST design of:
+    
+   -`router.get("/search/:title",searchMovies); 
+      // /api/movies/search/batman //
+
+    -`router.get("/:id", getMoviesDetails);
+     // /api/movies/tt0372784
+
+-*but the approach that was done in this project works great and was chosen by my instructor to see a different approach:
+ -Search Movies:
+  -URL: /api/movies/search
+  -method: GET
+  -query parameter: title (which is required)
+  -full URL: http://localhost:4000/api/movies/search?title=moviename
+   -example used: http://localhost:4000/api/movies/search?title=batman
+  -response: JSON array of movies matching the search term
+
+Get Movie Details:
+ -URL: /api/movies/details
+ -method: GET
+ -query parameter: id (required)
+ -full URL: http://localhost:4000/api/movies/details?id=movieid
+ -example used: http://localhost:4000/api/movies/details?id=tt0372784
+ -response: JSON object with detailed movie information
+
+_Testing the API__
+-using Postman: select extensions in Visual Studio code and search for `Postman` and select and install.
+-create a new request: click "new" "HTTP Request", set method to "GET", type in search endpoint: URL: http//localhost:4000/api/movies/search
+ -
 
 
