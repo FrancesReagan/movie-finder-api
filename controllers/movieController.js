@@ -1,6 +1,6 @@
 // controllers/moviecontroller//
 
-import  moviesClient  from "../api/moviesClient.js";
+import moviesClient from "../api/moviesClient.js";
 
 // search for movie 
 // @param {*} req
@@ -57,4 +57,4 @@ const searchMovies = async (req, res) => {
     };
   
     // export both functions to routes//
-    export { searchMovies, getMovieDetails };
+    export default { searchMovies, getMovieDetails };
