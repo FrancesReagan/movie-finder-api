@@ -14,10 +14,10 @@ dotenv.config();
 // create express app//
 const app = express();
 // set port number//
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 // MIDDLEWARE//
-// import middleware//
+// import middleware----not using this yet in this project---maybe if needed can use later if needed//
 import morgan from "morgan";
 
 
