@@ -10,6 +10,7 @@ _End point 2_http://localhost:4000/api/movies/details?id=tt0372784
 
 
 
+
 _Required Dependencies_
 
 -`npm install express axios dotenv`
@@ -21,11 +22,13 @@ _Required Dependencies_
   -dotenv: loads environment variables from .env file
 
 
+
 _Development Dependencies_
 
 -`npm install --save-dev nodemon`
 
   -nodemon: automatically restarts the server when files change
+
 
 
 __What this Project Does__
@@ -37,6 +40,7 @@ This API acts as a middleman between users and the OMDb API.
    -search for movies by title
    
    -get detailed information about specific movies
+
 
 
 _Technologies Used_
@@ -54,8 +58,10 @@ _Technologies Used_
 -Morgan: HTTP request logger middleware (installed but not implemented in this project version)
 
 
+
 __Project Structure__
 <img width="158" height="216" alt="image" src="https://github.com/user-attachments/assets/2a4e1891-cf20-4467-933c-b90974cde381" />
+
 
 
 __Setup Instructions__
@@ -102,6 +108,7 @@ __Setup Instructions__
    -Free 1,000 daily requests alloted.
 
 
+
   Get an API key:
   
    -get to OMDb API site
@@ -120,6 +127,7 @@ _Create an .env file (environment file):
   `OMDB_API_KEY=your_api_key_here`
 
 
+
   _Important:_
   -Replace `your_api_key_here` with your actual API key from OMDb
   
@@ -130,11 +138,13 @@ _Create an .env file (environment file):
   -save as .env
 
 
+
 _Create a `.gitignore` file in the root directory to keep sensitive information safe. 
 
 -Inside the `.gitignore` file put `node_modules` and `.env`
 
 This prevents your API key and tjhe large node_modules folder from being uploaded to GitHub.
+
 
 
 _Run the Server_
@@ -148,6 +158,7 @@ _Run the Server_
 The server will run on `http://localhost:4000`
 
 
+
 To use Query Parameters or to use Route parameters----I chose to use query parameters over route parameters.
 
  -What was used in this project -- query parameters--:
@@ -157,6 +168,7 @@ To use Query Parameters or to use Route parameters----I chose to use query param
   - `Get /api/movies/details?id=tt037284
   - 
   - query parameters were used instead of route parameters as it was requested by our instructor to do so to practice working with req.query.
+
     
 
  _Learning purpose:this approach helped me understand: how to extract data from `req.query.title` and `req.query.id`, input validation with query paramenters, 
@@ -169,6 +181,7 @@ To use Query Parameters or to use Route parameters----I chose to use query param
   -Search functionality with multiple optional criteria.
   
   -When you need to pass multiple parameters easily
+
 
 
   _Route Parameters (more RESTful): 
@@ -189,6 +202,7 @@ To use Query Parameters or to use Route parameters----I chose to use query param
 
 -*but the approach that was done in this project works great and was chosen by my instructor to see a different approach:
 
+
  -Search Movies:
  
   -URL: /api/movies/search
@@ -202,6 +216,7 @@ To use Query Parameters or to use Route parameters----I chose to use query param
    -example used: http://localhost:4000/api/movies/search?title=batman
    
   -response: JSON array of movies matching the search term
+
 
 
 Get Movie Details:
@@ -219,11 +234,36 @@ Get Movie Details:
  -response: JSON object with detailed movie information
 
 
+
 _Testing the API_
 
 -using Postman: select extensions in Visual Studio code and search for `Postman` and select and install
 
 -create a new request: click "new" "HTTP Request", set method to "GET", type in search endpoint: URL: http//localhost:4000/api/movies/search
+
+-in "params" tab, add: -key: title , -value: batman
+
+-click "Send"
+
+repeat for details endpoint: URL: http://localhost:4000/api/movies/details
+
+-in "Params" tab, add: -key: id, -value: tt0372784
+
+-click "Send"
+
+
+The API included proper error handling: -`400 Bad Request`: when required parameters are missing, `500 Internal Server Error`: when something goes wrong with the external API call
+
+__What this project taught me__
+
+-how to build a RESTful API with Express.js, -how to make HTTP requests to external APIs, -how to organize code into separate files (routes, controllers, client(s)), how to handle errors, how to keep API keys secure
+ using enviornment variables (.env), -how to validate user input before processing
+
+__Future Improvements__
+-Add Morgan middleware for better request logging, add more endpoints (genres, popular movies, and so forth), add caching to reduce API calls, add a front-end interface for users, user authentication
+
+
+
 
  -
 
