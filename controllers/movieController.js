@@ -57,4 +57,4 @@ const searchMovies = async (req, res) => {
     };
   
     // export both functions to routes//
-    export default { searchMovies, getMovieDetails };
+  export { searchMovies, getMovieDetails };

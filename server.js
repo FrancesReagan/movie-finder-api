@@ -7,9 +7,7 @@ import movieRoutes from "./routes/movieRoutes.js";
 import dotenv from "dotenv";
 
 dotenv.config();
-  // console.log(process.env.OMDB_API_KEY);
-// hidden in .env file//
-// const apiKey = process.env.OMDB_API_KEY;
+
 
 // create express app//
 const app = express();
