@@ -1,5 +1,7 @@
 __Movie Finder API__
+
 A RESTful API that allows users to search for movies and get detailed movie information using the OMDb(open movie database) API.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 _End point 1_ http://localhost:4000/api/movies/search?title=batman
 <img width="1261" height="734" alt="Movie-finder-api endpoint1" src="https://github.com/user-attachments/assets/a0cf45f7-acb6-471b-b2c9-371384ffe3f7" />
@@ -9,7 +11,7 @@ _End point 2_http://localhost:4000/api/movies/details?id=tt0372784
 <img width="1259" height="695" alt="Movie-finder-api endpoint2" src="https://github.com/user-attachments/assets/c468a1ec-dbca-4702-bb4c-73e9555b92d0" />
 
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 __Required Dependencies__
 
@@ -55,15 +57,16 @@ __Technologies Used__
 
 -Nodemon: development tool that automatically restarts the server when changes happen to the file or files change
 
--Morgan: HTTP request logger middleware (installed but not implemented in this project version)
+-Morgan: HTTP request logger middleware (installed but may be used in future)
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 __Project Structure__
 <img width="158" height="216" alt="image" src="https://github.com/user-attachments/assets/2a4e1891-cf20-4467-933c-b90974cde381" />
 
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 __Setup Instructions__
 
   -`mkdir movie-finder-api`
@@ -147,7 +150,7 @@ This prevents your API key and tjhe large node_modules folder from being uploade
 
 
 
-__Run the Server_
+_Run the Server_
 
 -For development (auto-restart on changes)
 
@@ -157,10 +160,10 @@ __Run the Server_
 
 The server will run on `http://localhost:4000`
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-To use Query Parameters or to use Route parameters----I chose to use query parameters over route parameters.
+__To use Query Parameters or to use Route parameters----I chose to use query parameters over route parameters.__
 
  -What was used in this project -- query parameters--:
  
@@ -172,8 +175,8 @@ To use Query Parameters or to use Route parameters----I chose to use query param
 
     
 
- _Learning purpose:this approach helped me understand: how to extract data from `req.query.title` and `req.query.id`, input validation with query paramenters, 
- and URL structure with query strings.
+ __Learning purpose:this approach helped me understand: how to extract data from `req.query.title` and `req.query.id`, input validation with query paramenters, 
+ and URL structure with query strings.__
 
  _When to use each approach:_ 
  
@@ -234,7 +237,7 @@ Get Movie Details:
  
  -response: JSON object with detailed movie information
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 __Testing the API__
 
@@ -263,7 +266,64 @@ __What this project taught me__
 __Future Improvements__
 -Add Morgan middleware for better request logging, add more endpoints (genres, popular movies, and so forth), add caching to reduce API calls, add a front-end interface for users, user authentication
 
+___________________________________________________________________________________________________________________________________________________________________________________________________________________
 
+
+__REFLECTIONS__
+
+This project helped me to understand more how web APIs work and how different pieces of the backend application work and fit together. 
+
+_What went well_: Setup and installing Dependencies: I learned how to properly initialize a Node.js project and install the needed dependencies. I installed `Morgan` middleware but did not end up
+ using it for logging.  
+
+ Understanding the Architecture: making separate files --making it modular---with `routes`, `controllers`, and `clients`--made the project organized and reusable and easier to maintain and debug.
+
+ Debugging: I learned the importance of systematic debugging when I ran into issues (especially with the environment variables  not loading). I added console.log statements and trying to remember
+            to test one piece at a time---is the best practice to figure out early what is going on if there is an issue. I did not do this consistently--but I will in the future.
+
+  External API integration: I learned how to work with external APIs. I set up the movieClient with axios to automatically include the API key --that is a cool thing:).
+
+  _Challenges faced:_
+  Environment variables: this was my biggest challenge. My `.env` file was not being read properly---the API key was coming through as undefined. The issue--formatting and placement in the `.env` file
+  are crucial.
+
+_Learning moments_: understanding modularity and how awesome it is---the why the movieClient functionality was separated form the controllers---as having one place to configure how I talk to the 
+ OMDb API means that if I need to change something (like the API key or add logging) -- I only have to change it in one place.
+
+ _Skills Developed_: 
+ -Backend development: understanding how servers work and respond to requests
+ -API design: learning about RESTful principles and good endpoint design.
+ -Error handling: making applications robust and user-friendly.
+ -code organization: separating concerns and making code more maintainable.
+ -environment management: keeping secrets safe and making configurations flexible.
+ -debugging: systematic problem-solving and using logs effectively are best practices.
+
+ _In the future_:
+  -learn about database integration (connecting to MongoDB or similar)
+  -learn about user authentication and authorization.
+  -learn how to build front-end apps that consume APIs.
+  -how to deploy APIs to the cloud.
+
+_Resources and References_:
+[Express.js](https://expressjs.com/)
+
+[Axios](https://axios-http.com/)
+
+[Node.js dotenv](https://www.npmjs.com/package/dotenv)
+
+[Nodemon](https://nodemon.io/)
+
+[Postman](https://www.postman.com/)
+
+[RESTful API Design](https://restfulapi.net/)
+
+[HTTP Status codes]( https://httpstatuses.com/)
+
+[JSON format](https://www.json.org/)
+
+__Acknowledgments__
+To my instructors at Per Scholas: A. Tavarez and C. Wright thank you for your support and guidance; to my fellow 2025-RTT-23 cohort classmates---thank you for your support.
+  
 
 
  -
