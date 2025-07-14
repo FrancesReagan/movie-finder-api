@@ -24,10 +24,8 @@ const searchMovies = async (req, res) => {
 
     // make request to OMDB: http://www.omdbapi.com/?s=batman&apiKey=//
     // ? = query , s = search//
-    const moviesResult = await moviesClient.get(`/?s=${title}`);
-    // ungray out or uncomment this below when ready to use real api key//
-    // const moviesResult = await moviesClient.get(`/?s=${title}&apiKey=${process.env.OMDB_API_KEY`);
-    // send back the results//
+    
+    const moviesResult = await moviesClient.get(`/?s=${title}&apiKey=${process.env.OMDB_API_KEY}`);
     res.json(moviesResult.data);
 
   } catch (error) {
