@@ -286,7 +286,7 @@ _What went well_: Setup and installing Dependencies: I learned how to properly i
 
   _Challenges faced:_
   Environment variables: this was my biggest challenge. My `.env` file was not being read properly---the API key was coming through as undefined. The issue--formatting and placement in the `.env` file
-  are crucial.
+  are crucial.  I deleted the .env file as even though it was in my .gitignore file it was still pushed to git hub--so I deleted it from this project.
 
 _Learning moments_: understanding modularity and how awesome it is---the why the movieClient functionality was separated form the controllers---as having one place to configure how I talk to the 
  OMDb API means that if I need to change something (like the API key or add logging) -- I only have to change it in one place.
