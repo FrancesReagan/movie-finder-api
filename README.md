@@ -244,8 +244,9 @@ __What this project taught me__
 
 -how to build a RESTful API with Express.js, -how to make HTTP requests to external APIs, -how to organize code into separate files (routes, controllers, client(s)), how to handle errors, that I am still learning how to keep API keys secure using enviornment variables (.env)--and the issues that this can have--; -how to validate user input before processing
 
-__Future Improvements__
--Add Morgan middleware for better request logging, add more endpoints (genres, popular movies, and so forth), add caching to reduce API calls, add a front-end interface for users, user authentication
+I went ahead and added and used Morgan (`import morgan from "morgan"`,`app.use(morgan("combined")); --- and added Express.json() middleware---`app.use(express.json());`
+-"morgan" helps you see all the GET requests form Postman in your terminal; -express.json()--helps POST/PUT endpoints that need to receive JSON data (like adding new movies to database).
+
 
 ___________________________________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -265,6 +266,7 @@ _What went well_: Setup and installing Dependencies: I learned how to properly i
   _Challenges faced:_
   Environment variables: this was my biggest challenge. My `.env` file was not being read properly---the API key was coming through as undefined. The issue--formatting and placement in the `.env` file
   are crucial. Then I had the API key actually push to github --even though it was in my .gitignore file---issue was I had it in duplicate in client and controller--so fixed these issues.
+  I went ahead and got a new API-key--and slowly debugged movieController and moviesClient pages until it worked in Postman at both endpoints.
 
 _Learning moments_: understanding modularity and how awesome it is---the why the movieClient functionality was separated form the controllers---as having one place to configure how I talk to the 
  OMDb API means that if I need to change something (like the API key or add logging) -- I only have to change it in one place.
