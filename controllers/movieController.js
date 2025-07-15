@@ -30,6 +30,7 @@ const searchMovies = async (req, res) => {
 
   } catch (error) {
     // handle any errors//
+    console.error("movie search error", error);
     res.status(500).json({ error: "Internal server error--could not get movie by title"});
   }
   };
