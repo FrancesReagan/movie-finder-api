@@ -34,7 +34,7 @@ const searchMovies = async (req, res) => {
   }
   };
 
-  // may remove this function to get movie dtails by ID---as this is kind of redundant as done somewhat similar  in moviesClient//
+ 
   const getMovieDetails = async (req, res) => {
     try {
       // get movie ID form URL parameter//
@@ -50,7 +50,9 @@ const searchMovies = async (req, res) => {
       
       // send back the movie details//
       res.json(response.data);
+
     } catch (error) {
+      console.error("movie details error:", error);
   //  handle any errors//
      res.status(500).json({ error: "Internal server error --movie details failed to return" });
     }
