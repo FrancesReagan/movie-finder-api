@@ -14,12 +14,12 @@ const app = express();
 // set port number//
 const PORT = process.env.PORT || 3000;
 
-// MIDDLEWARE//
-// import middleware for logging//
-import morgan from "morgan";
-app.use(morgan("combined"));
-// add JSON parsing middleware//
-app.use(express.json());
+// // MIDDLEWARE//
+// // import middleware for logging//
+// import morgan from "morgan";
+// app.use(morgan("combined"));
+// // add JSON parsing middleware//
+// app.use(express.json());
 
 
 // ROUTES//
