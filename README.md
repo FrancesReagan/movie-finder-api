@@ -169,7 +169,7 @@ __use Query Parameters__
  -What was used in this project -- query parameters--:
  
   - `Get /api/movies/search?title=batman`
-  - 
+
   - `Get /api/movies/details?id=tt037284
 
 
