@@ -29,15 +29,14 @@ app.use("/api/movies", movieRoutes);
 // home route//
 app.get("/", (req, res) => {
   res.json({
-    res.json({
       message: "movie finder API is running",
       endpoints: {
         search: "/api/movies/search?title=batman",
-        details: "/api,movies/details?id=tt0372784",
+        details: "/api/movies/details?id=tt0372784",
       }
     })
   });
-}); 
+
 
 
 // start server and listen on port //
