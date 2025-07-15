@@ -1,4 +1,4 @@
-// main server file//
+
 // import express framework//
 import express from "express";
 // import our movie routes//
@@ -15,16 +15,28 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // MIDDLEWARE//
-// import middleware----not using this yet in this project---maybe if needed can use later if needed//
+// import middleware for logging//
 import morgan from "morgan";
+app.use(morgan("combined"));
+// add JSON parsing middleware//
+app.use(express.json());
 
 
 // ROUTES//
 // use movie routes with /api prefix//
 app.use("/api/movies", movieRoutes);
 
+// home route//
 app.get("/", (req, res) => {
-  res.send("hello.....");
+  res.json({
+    res.json({
+      message: "movie finder API is running",
+      endpoints: {
+        search: "/api/movies/search?title=batman",
+        details: "/api,movies/details?id=tt0372784",
+      }
+    })
+  });
 }); 
 
 
