@@ -164,15 +164,14 @@ The server will run on `http://localhost:4000`
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 
-__To use Query Parameters or to use Route parameters----I chose to use query parameters over route parameters.__
+__use Query Parameters__
 
  -What was used in this project -- query parameters--:
  
   - `Get /api/movies/search?title=batman`
-  - 
+
   - `Get /api/movies/details?id=tt037284
-  - 
-  - query parameters were used instead of route parameters as it was requested by our instructor to do so to practice working with req.query.
+
 
     
 
@@ -186,26 +185,6 @@ __To use Query Parameters or to use Route parameters----I chose to use query par
   -Search functionality with multiple optional criteria.
   
   -When you need to pass multiple parameters easily
-
-
-
-  _Route Parameters (more RESTful): 
-  
-   -standard REST convention.
-   
-   -better for resource identification: /api/movies/tt037283 
-   
-   -cleaner URLs that are easy to read.
-
-  _*usually route parameters for this project would have a typical REST design of:
-    
-   -`router.get("/search/:title",searchMovies); 
-      // /api/movies/search/batman //
-
-    -`router.get("/:id", getMoviesDetails);
-     // /api/movies/tt0372784
-
--*but the approach that was done in this project works great and was chosen by my instructor to see a different approach:
 
 
  -Search Movies:
@@ -283,13 +262,13 @@ _What went well_: Setup and installing Dependencies: I learned how to properly i
 
   _Challenges faced:_
   Environment variables: this was my biggest challenge. My `.env` file was not being read properly---the API key was coming through as undefined. The issue--formatting and placement in the `.env` file
-  are crucial.  I made sure this solution worked--then as a security measuer I deleted the .env file as even though it was in my .gitignore file it was still pushed to git hub--so I deleted it from this project.
+  are crucial. Then I had the API key actually push to github --even though it was in my .gitignore file---issue was I had it in duplicate in client and controller--so fixed these issues.
 
 _Learning moments_: understanding modularity and how awesome it is---the why the movieClient functionality was separated form the controllers---as having one place to configure how I talk to the 
  OMDb API means that if I need to change something (like the API key or add logging) -- I only have to change it in one place.
 
  _Skills Developed_: 
- -Backend development: understanding how servers work and respond to requests
+ -Backend development: understanding how servers work and respond to requests.
  -API design: learning about RESTful principles and good endpoint design.
  -Error handling: making applications robust and user-friendly.
  -code organization: separating concerns and making code more maintainable.
@@ -297,11 +276,11 @@ _Learning moments_: understanding modularity and how awesome it is---the why the
  -debugging: systematic problem-solving and using logs effectively are best practices.
 
  _In the future_:
-  -learn about database integration (connecting to MongoDB or similar)
+  -learn about database integration (connecting to MongoDB or similar).
   -learn about user authentication and authorization.
   -learn how to build front-end apps that consume APIs.
   -how to deploy APIs to the cloud.
-  -figure out why my .env file was pushed to github even though I had it in my .gitignore file--solutionn temporary--deleted file
+ 
 
 _Resources and References_:
 [Express.js](https://expressjs.com/)
