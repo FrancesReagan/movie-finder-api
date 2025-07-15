@@ -5,7 +5,8 @@ A RESTful API that allows users to search for movies and get detailed movie info
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 _End point 1_ http://localhost:4000/api/movies/search?title=batman
-<img width="1261" height="734" alt="Movie-finder-api endpoint1" src="https://github.com/user-attachments/assets/a0cf45f7-acb6-471b-b2c9-371384ffe3f7" />
+<img width="1280" height="764" alt="image" src="https://github.com/user-attachments/assets/0290fde8-ca02-47ed-9dca-0eac9c88fccf" />
+
 
 
 _End point 2_http://localhost:4000/api/movies/details?id=tt0372784
