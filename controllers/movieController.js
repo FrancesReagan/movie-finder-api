@@ -14,7 +14,7 @@ const searchMovies = async (req, res) => {
     // get title from query parameter//
     const title = req.query.title;
     console.log("Query: ", title);
-    console.log("API Key fro .env:", process.env.OMDB_API_KEY);
+   
 
     // validation check---check if title was provided---below says---if title is not provided, return or  response status 400 error"
     if (!title) {
@@ -22,10 +22,10 @@ const searchMovies = async (req, res) => {
       .json({ error: "Title query parameter is required" });
     }
 
-    // make request to OMDB: http://www.omdbapi.com/?s=batman&apiKey=//
-    // ? = query , s = search//
-    
+    // make request to OMDB API--//
+    // adding this back --- api key is automatically added by moviesClient//
     const moviesResult = await moviesClient.get(`/?s=${title}&apiKey=${process.env.OMDB_API_KEY}`);
+   // send back results//
     res.json(moviesResult.data);
 
   } catch (error) {
